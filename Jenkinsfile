@@ -17,8 +17,7 @@ pipeline {
 
         stage('Test') {
           steps {
-            sh '''docker-compose up -d --build
-docker-compose exec web python manage.py test'''
+            sh 'docker-compose up -d --build && docker-compose exec web python manage.py test'
           }
         }
 
